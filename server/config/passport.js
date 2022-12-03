@@ -1,5 +1,5 @@
 const keys = require("./keys");
-const userModel = require("../models/users-models");
+const userModel = require("../models/users-model");
 const JwtStrategy = require("passport-jwt").Strategy;
 const ExtractJwt = require("passport-jwt").ExtractJwt;
 const options = {
