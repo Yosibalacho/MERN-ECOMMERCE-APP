@@ -1,0 +1,21 @@
+/* table{
+    width: 100%;
+    text-align: start;
+}
+table>tbody>tr:nth-child(even){
+ background-color: hsl(0, 9%, 96%);
+
+}
+.list{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 1.5rem;
+}
+@media screen and (max-width:765px) {
+    table{
+        font-size: 12px;
+    } 
+   
+} */

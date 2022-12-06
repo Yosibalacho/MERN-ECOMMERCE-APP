@@ -28,7 +28,7 @@ const getDepartmentById = async (req, res) => {
 
 const createDepartment = async (req, res) => {
   await departmentsModel
-    .insertMany(req.body.data)
+    .insertMany(req.body.department)
     .then(() =>
       res.status(200).json({ success: true, message: "department added" })
     )
@@ -37,7 +37,7 @@ const createDepartment = async (req, res) => {
 
 const updateDepartment = async (req, res) => {
   await departmentsModel
-    .findByIdAndUpdate(req.params.id, req.body.data)
+    .findByIdAndUpdate(req.params.id, req.body.department)
     .then((result) => res.status(200).json({ success: true, result }))
     .catch((err) => res.status(400).json({ success: false, message: err }));
 };

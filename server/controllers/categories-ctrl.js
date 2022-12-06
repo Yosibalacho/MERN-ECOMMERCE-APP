@@ -28,7 +28,7 @@ const getCategoryById = async (req, res) => {
 
 const createCategory = async (req, res) => {
   await categoriesModel
-    .insertMany(req.body.data)
+    .insertMany(req.body.category)
     .then(() =>
       res.status(200).json({ success: true, message: "category added" })
     )
@@ -37,7 +37,7 @@ const createCategory = async (req, res) => {
 
 const updateCategory = async (req, res) => {
   await categoriesModel
-    .findByIdAndUpdate(req.params.id, req.body.data)
+    .findByIdAndUpdate(req.params.id, req.body.category)
     .then((result) => res.status(200).json({ success: true, result }))
     .catch((err) => res.status(400).json({ success: false, message: err }));
 };

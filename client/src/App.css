@@ -6,6 +6,9 @@
   height: 40vmin;
   pointer-events: none;
 }
+body{
+  background-color: hwb(206 92% 5%)
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

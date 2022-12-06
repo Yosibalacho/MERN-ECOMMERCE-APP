@@ -28,7 +28,7 @@ const getProductById = async (req, res) => {
 
 const createProduct = async (req, res) => {
   await productsModel
-    .insertMany(req.body.data)
+    .insertMany(req.body.product)
     .then(() =>
       res.status(200).json({ success: true, message: "product added" })
     )
@@ -37,7 +37,7 @@ const createProduct = async (req, res) => {
 
 const updateProduct = async (req, res) => {
   await productsModel
-    .findByIdAndUpdate(req.params.id, req.body.data)
+    .findByIdAndUpdate(req.params.id, req.body.product)
     .then((result) => res.status(200).json({ success: true, result }))
     .catch((err) => res.status(400).json({ success: false, message: err }));
 };

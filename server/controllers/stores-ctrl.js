@@ -17,9 +17,9 @@ const getStore = async (req, res) => {
 const getStoreById = async (req, res) => {
   await storesModel
     .findById(req.params.id)
-    .then((productId) => {
-      if (productId) {
-        return res.status(200).json({ success: true, productId });
+    .then((storeId) => {
+      if (storeId) {
+        return res.status(200).json({ success: true,  storeId });
       }
       return res.json({ success: false, message: "store not found" });
     })
@@ -28,14 +28,14 @@ const getStoreById = async (req, res) => {
 
 const createStore = async (req, res) => {
   await storesModel
-    .insertMany(req.body.data)
+    .insertMany(req.body.store)
     .then(() => res.status(200).json({ success: true, message: "store added" }))
     .catch((error) => res.status(400).json({ success: false, error }));
 };
 
 const updateStore = async (req, res) => {
   await storesModel
-    .findByIdAndUpdate(req.params.id, req.body.data)
+    .findByIdAndUpdate(req.params.id, req.body.store)
     .then((result) => res.status(200).json({ success: true, result }))
     .catch((err) => res.status(400).json({ success: false, message: err }));
 };

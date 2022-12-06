@@ -1,0 +1,76 @@
+.inside{
+    
+    width: 100%;
+    height: 35vh;
+    background-color: white;
+}
+
+.showCaseContainer{
+    width: 95vw;
+   display: grid;
+   grid-template-columns: 50% 50%;
+   gap: 1.5rem;
+   justify-content: center;
+   align-content: center;
+}
+
+.circleShowCase{
+    background-color: hwb(206 92% 5%);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 0.8rem;
+    justify-content: center;
+    align-content: center;
+}
+.inside{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.inside>.circle{
+
+    border: 6px solid  #4ba4a1;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border-left: 2px solid black;
+    border-top:  solid black;
+    color:#4ba4a1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+}
+.showCase{
+text-align: center;
+}
+
+
+
+@media screen and (max-width:765px) {
+   
+    .showCaseContainer{
+       grid-template-columns: 100% ;
+    
+    }
+    .tablhOLDER{
+        overflow: scroll;
+    }
+    .one>.inside{
+       height: 20vh ;
+    }
+    .two>.inside{
+        height: 20vh;
+     }
+     .inside>.circle{
+
+        width: 150px;
+        height: 150px;
+      
+      
+    }
+    .one ,.two{
+        font-size: 15px !important;
+    }
+}

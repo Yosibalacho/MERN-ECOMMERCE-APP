@@ -28,7 +28,7 @@ const getOrderById = async (req, res) => {
 
 const createOrder = async (req, res) => {
   await ordersModel
-    .insertMany(req.body.data)
+    .insertMany(req.body.order)
     .then(() =>
       res.status(200).json({ success: true, message: "order added" })
     )
@@ -37,7 +37,7 @@ const createOrder = async (req, res) => {
 
 const updateOrder = async (req, res) => {
   await ordersModel
-    .findByIdAndUpdate(req.params.id, req.body.data)
+    .findByIdAndUpdate(req.params.id, req.body.order)
     .then((result) => res.status(200).json({ success: true, result }))
     .catch((err) => res.status(400).json({ success: false, message: err }));
 };
